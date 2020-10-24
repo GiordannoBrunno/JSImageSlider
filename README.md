@@ -1,1 +1,1 @@
-# JSImageSlider
+# JSFullPageSlider
