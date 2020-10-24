@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Simple Product Slider</title>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Products.</a>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Store</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </header>
+    <section class="banner">
+        <div class="imgBox">
+            <img src="/img/img1.jpg" class="active" alt="">
+            <img src="/img/img2.jpg" alt="">
+            <img src="/img/img3.jpg" alt="">
+            <img src="/img/img4.jpg" alt="">
+        </div>
+
+        <div class="contentBox">
+            <div>
+                <h2>Slide text one</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit viverra, dictum tincidunt natoque. Mauris in habitant class facilisis bibendum placerat sed justo lectus euismod ad, primis varius viverra volutpat aliquam vel aenean augue mattis lobortis eleifend quam, hac purus tortor mus proin porta sodales montes inceptos ac. Commodo id tortor curae parturient scelerisque vestibulum hac ut, laoreet tincidunt hendrerit auctor cursus euismod torquent habitasse, massa tristique arcu fermentum dui ligula vulputate.</p>
+                <a href="#">Details</a>
+            </div>
+            <div>
+                <h2>Slide text two</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit viverra, dictum tincidunt natoque. Mauris in habitant class facilisis bibendum placerat sed justo lectus euismod ad, primis varius viverra volutpat aliquam vel aenean augue mattis lobortis eleifend quam, hac purus tortor mus proin porta sodales montes inceptos ac. Commodo id tortor curae parturient scelerisque vestibulum hac ut, laoreet tincidunt hendrerit auctor cursus euismod torquent habitasse, massa tristique arcu fermentum dui ligula vulputate.</p>
+                <a href="#">Details</a>
+            </div>
+            <div>
+                <h2>Slide text three</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit viverra, dictum tincidunt natoque. Mauris in habitant class facilisis bibendum placerat sed justo lectus euismod ad, primis varius viverra volutpat aliquam vel aenean augue mattis lobortis eleifend quam, hac purus tortor mus proin porta sodales montes inceptos ac. Commodo id tortor curae parturient scelerisque vestibulum hac ut, laoreet tincidunt hendrerit auctor cursus euismod torquent habitasse, massa tristique arcu fermentum dui ligula vulputate.</p>
+                <a href="#">Details</a>
+            </div>
+            <div>
+                <h2>Slide text four</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit viverra, dictum tincidunt natoque. Mauris in habitant class facilisis bibendum placerat sed justo lectus euismod ad, primis varius viverra volutpat aliquam vel aenean augue mattis lobortis eleifend quam, hac purus tortor mus proin porta sodales montes inceptos ac. Commodo id tortor curae parturient scelerisque vestibulum hac ut, laoreet tincidunt hendrerit auctor cursus euismod torquent habitasse, massa tristique arcu fermentum dui ligula vulputate.</p>
+                <a href="#">Details</a>
+            </div>
+        </div>
+
+        <ul class="controls">
+            <li onclick="prevSlide();prevSlideText();"></li>
+            <li onclick="nextSlide();nextSlideText();"></li>
+        </ul>
+    </section>
+
+    <script type="text/javascript">
+        const imgBox =document.querySelector('.imgBox');
+        const slides = imgBox.getElementsByTagName('img');
+        var i = 0;
+        var j = 0;
+
+        function nextSlide(){
+            slides[i].classList.remove('active');
+            i = (i + 1 ) % slides.length;
+            slides[i].classList.add('active');
+        }
+        function prevSlide(){
+            slides[i].classList.remove('active');
+            i = (i - 1 + slides.length) % slides.length;
+            slides[i].classList.add('active');
+        }
+
+
+        const contentBox =document.querySelector('.contentBox');
+        const slidesText = contentBox.getElementsByTagName('div');
+        var i = 0;
+
+        function nextSlideText(){
+            slidesText[j].classList.remove('active');
+            j = (j + 1 ) % slidesText.length;
+            slidesText[j].classList.add('active');
+        }
+        function prevSlideText(){
+            slidesText[j].classList.remove('active');
+            j = (j - 1 + slidesText.length) % slidesText.length;
+            slidesText[j].classList.add('active');
+        }
+    </script>
+</body>
+</html>
